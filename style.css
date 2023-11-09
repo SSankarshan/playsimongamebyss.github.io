@@ -68,14 +68,14 @@ body {
   }
   
   /* Media query for screens with a maximum width of 768px (adjust as needed) */
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     .btn,
     .btn1,
     .btn2 {
-      height: 100px; /* Adjust sizes for smaller screens */
-      width: 100px; /* Adjust sizes for smaller screens */
-      border: 3px solid black; /* Adjust border thickness for smaller screens */
-      font-size: 1rem; /* Adjust font size for smaller screens */
+      height: 500px; /* Adjust sizes for smaller screens */
+      width: 500px; /* Adjust sizes for smaller screens */
+      border: 6px solid black; /* Adjust border thickness for smaller screens */
+      font-size: 3rem; /* Adjust font size for smaller screens */
     }
   }
   

@@ -61,7 +61,7 @@ function handler(btnId, count) {
             setTimeout(nextSequence, 1500);
         } else {
             maxLevelReached = Math.max(maxLevelReached, level);
-            $("#level-title").html("Game Over! <br>your score = " + (level - 1)  + " <br>Max score = " + (maxLevelReached - 1) + "<br> Click R to replay last level. Click Enter key to play again");
+            $("#level-title").html("Game Over! <br>your score = " + (level - 1)  + " <br>Max score = " + (maxLevelReached - 1) + "<br> Click R to replay last level. Click 'Start' to play again");
             playSoundGameOver();
         }
     }

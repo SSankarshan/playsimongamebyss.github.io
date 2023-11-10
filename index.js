@@ -1,5 +1,4 @@
-
-
+alert("In Simon, you watch and listen to the colors and sounds, then try to remember and do them yourself—it's like a colorful memory challenge !");
 var gamePattern = [];
 var userClickedPattern = [];
 var buttonColours = ["blue", "red", "yellow", "green"];
@@ -15,11 +14,12 @@ $(".btn").on("click", function (event) {
     handler(iD, count);
 });
 
-$(".btn1").on("click", function (event) {
+$("#btn1").on("click", function (event) {
     var btn = event.target.id;
     fadeEffect(btn);
     playGame();
 });
+
 
 $(".btn2").on("click", function (event) {
     var btn = event.target.id;
@@ -36,6 +36,9 @@ $(document).on("keydown", function (event) {
 
 });
 
+$("#btn3").on("click", function (event) {
+    alert("Repeat the sequence of colors that have blinked so far ! ");
+});
 
 function incrementCount() {
     count += 1;

@@ -3,16 +3,21 @@ body {
   background-color: rgb(0, 0, 0);
 }
 
+#title-box {
+  height: 140px;
+  margin: 150px;
+}
+
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 3%;
   color: #fc00c5;
 }
 
 #game-title {
   font-family: 'Brush system-ui', cursive;
-  font-size: 5rem;
+  font-size: 4rem;
   color: blue;
 }
 
@@ -41,8 +46,8 @@ body {
 }
 
 .btn {
-  height: 340px;
-  width: 340px;
+  height: 300px;
+  width: 300px;
 }
 
 .btn1,
@@ -89,13 +94,18 @@ body {
 
 /* Media queries for laptops */
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1100px) {
 
   body {
     text-align: center;
     background-color: rgb(0, 0, 0);
   }
   
+  #title-box {
+    height: 40px;
+    margin: 30px;
+  }
+
   #level-title {
     font-family: 'Press Start 2P', cursive;
     font-size: 1rem;

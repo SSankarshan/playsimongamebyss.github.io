@@ -89,18 +89,18 @@ body {
 
     
     .btn {
-      height: 110px; /* Adjust sizes for smaller screens */
-      width: 110px; /* Adjust sizes for smaller screens */
+      height: 300px; /* Adjust sizes for smaller screens */
+      width: 300px; /* Adjust sizes for smaller screens */
       border: 5px solid black; /* Adjust border thickness for smaller screens */
       font-size: 1.5rem; /* Adjust font size for smaller screens */
     }
 
     .btn1,
     .btn2 {
-      height: 110; /* Adjust sizes for smaller screens */
-      width: 150; /* Adjust sizes for smaller screens */
-      border: 5px solid black; /* Adjust border thickness for smaller screens */
-      font-size: 1.5rem; /* Adjust font size for smaller screens */
+      height: 300px; /* Adjust sizes for smaller screens */
+      width: 300px; /* Adjust sizes for smaller screens */
+      border: 10px solid black; /* Adjust border thickness for smaller screens */
+      font-size: 3rem; /* Adjust font size for smaller screens */
       border-radius: 15%;
     }
   }

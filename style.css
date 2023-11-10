@@ -89,8 +89,8 @@ body {
 
     
     .btn {
-      height: 150px; /* Adjust sizes for smaller screens */
-      width: 150px; /* Adjust sizes for smaller screens */
+      height: 100px; /* Adjust sizes for smaller screens */
+      width: 100px; /* Adjust sizes for smaller screens */
       border: 5px solid black; /* Adjust border thickness for smaller screens */
       font-size: 1.5rem; /* Adjust font size for smaller screens */
     }

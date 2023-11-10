@@ -69,13 +69,25 @@ body {
   
   /* Media query for screens with a maximum width of 768px (adjust as needed) */
   @media only screen and (max-width: 1000px) {
+
+    #level-title {
+      font-family: 'Press Start 2P', cursive;
+      font-size: 5rem;
+      margin: 9%;
+      color: #FEF2BF;
+    }
+
+    #game-title {
+      font-size: 7rem;
+    }
+
     .btn,
     .btn1,
     .btn2 {
-      height: 700px; /* Adjust sizes for smaller screens */
-      width: 700px; /* Adjust sizes for smaller screens */
-      border: 30px solid black; /* Adjust border thickness for smaller screens */
-      font-size: 7rem; /* Adjust font size for smaller screens */
+      height: 400px; /* Adjust sizes for smaller screens */
+      width: 400px; /* Adjust sizes for smaller screens */
+      border: 20px solid black; /* Adjust border thickness for smaller screens */
+      font-size: 10rem; /* Adjust font size for smaller screens */
     }
   }
   

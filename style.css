@@ -72,22 +72,36 @@ body {
 
     #level-title {
       font-family: 'Press Start 2P', cursive;
-      font-size: 5rem;
-      margin: 9%;
+      font-size: 2rem;
+      margin: 3%;
       color: #FEF2BF;
     }
 
     #game-title {
-      font-size: 7rem;
+      font-size: 3rem;
     }
 
-    .btn,
+    .container {
+      display: block;
+      width: 100%; /* Change this to 100% to make it responsive */
+      margin: auto;
+    }
+
+    
+    .btn {
+      height: 150px; /* Adjust sizes for smaller screens */
+      width: 150px; /* Adjust sizes for smaller screens */
+      border: 7px solid black; /* Adjust border thickness for smaller screens */
+      font-size: 1.5rem; /* Adjust font size for smaller screens */
+    }
+
     .btn1,
     .btn2 {
-      height: 400px; /* Adjust sizes for smaller screens */
-      width: 400px; /* Adjust sizes for smaller screens */
-      border: 20px solid black; /* Adjust border thickness for smaller screens */
-      font-size: 10rem; /* Adjust font size for smaller screens */
+      height: 150px; /* Adjust sizes for smaller screens */
+      width: 200px; /* Adjust sizes for smaller screens */
+      border: 7px solid black; /* Adjust border thickness for smaller screens */
+      font-size: 3rem; /* Adjust font size for smaller screens */
+      border-radius: 15%;
     }
   }
   

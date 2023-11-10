@@ -68,7 +68,7 @@ body {
   }
   
   /* Media query for screens with a maximum width of 768px (adjust as needed) */
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 400px) {
 
     #level-title {
       font-family: 'Press Start 2P', cursive;
@@ -89,18 +89,18 @@ body {
 
     
     .btn {
-      height: 150px; /* Adjust sizes for smaller screens */
-      width: 150px; /* Adjust sizes for smaller screens */
-      border: 7px solid black; /* Adjust border thickness for smaller screens */
+      height: 110px; /* Adjust sizes for smaller screens */
+      width: 110px; /* Adjust sizes for smaller screens */
+      border: 5px solid black; /* Adjust border thickness for smaller screens */
       font-size: 1.5rem; /* Adjust font size for smaller screens */
     }
 
     .btn1,
     .btn2 {
-      height: 150px; /* Adjust sizes for smaller screens */
-      width: 200px; /* Adjust sizes for smaller screens */
-      border: 7px solid black; /* Adjust border thickness for smaller screens */
-      font-size: 3rem; /* Adjust font size for smaller screens */
+      height: 110; /* Adjust sizes for smaller screens */
+      width: 150; /* Adjust sizes for smaller screens */
+      border: 5px solid black; /* Adjust border thickness for smaller screens */
+      font-size: 1.5rem; /* Adjust font size for smaller screens */
       border-radius: 15%;
     }
   }

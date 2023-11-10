@@ -15,8 +15,17 @@ $(".btn").on("click", function (event) {
     handler(iD, count);
 });
 
-$(".btn1").on("click", playGame);
-$(".btn2").on("click", replay);
+$(".btn1").on("click", function (event) {
+    var btn = event.target.id;
+    fadeEffect(btn);
+    playGame();
+});
+
+$(".btn2").on("click", function (event) {
+    var btn = event.target.id;
+    fadeEffect(btn);
+    replay();
+});
 
 $(document).on("keydown", function (event) {
     if (event.key === "Enter") {
@@ -39,6 +48,7 @@ function displayPlayAgain() {
 }
 
 function replay() {
+    playReplaySound();
     $("#level-title").text("Replay of last level. Click 'start' to play again. Press 'Replay' to see again");
     for (var i = 0; i < gamePattern.length; i++) {
         setTimeout(function (color) {
@@ -58,11 +68,12 @@ function handler(btnId, count) {
         if (gamePattern.every((element, index) => element === userClickedPattern[index])) {
             userClickedPattern = [];
             console.log("count is " + count);
-            setTimeout(nextSequence, 1500);
+            setTimeout(nextSequence, 1000);
         } else {
-            maxLevelReached = Math.max(maxLevelReached, level);
-            $("#level-title").html("Game Over! <br>your score = " + (level - 1)  + " <br>Max score = " + (maxLevelReached - 1) + "<br> Click R to replay last level. Click 'Start' to play again");
             playSoundGameOver();
+            maxLevelReached = Math.max(maxLevelReached, level);
+            $("#level-title").html("Game Over! <br>your score = " + (level - 1)  + " <br>Max score = " + (maxLevelReached - 1) + "<br> Click 'Replay' to see last level. Click 'Start' to play again!");
+            $(".btn2").css("visibility","visible");
         }
     }
 }
@@ -72,6 +83,9 @@ function blinkEffect(color) {
     $("#" + color).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 }
 
+function fadeEffect(btn) {
+    $("#" + btn).fadeIn(100).fadeOut(100).fadeIn(100);
+}
 
 function playSound(color) {
     const audio = new Audio("sounds\\" + color + ".mp3");
@@ -79,6 +93,11 @@ function playSound(color) {
 }
 function playSoundGameOver() {
     const audio = new Audio("sounds\\negative_beeps-6008.mp3");
+    audio.play();
+}
+
+function playReplaySound() {
+    const audio = new Audio("sounds\\rewind.mp3");
     audio.play();
 }
 
@@ -98,6 +117,7 @@ function playGame() {
     userClickedPattern = [];
     level = 0;
     count = 0;
+    $(".btn2").css("visibility","hidden");
     nextSequence();
 }
 

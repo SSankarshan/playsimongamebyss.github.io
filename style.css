@@ -1,16 +1,21 @@
 body {
     text-align: center;
-    background-color: rgb(128, 182, 120);
+    background-color: rgb(0, 0, 0);
   }
   
   #level-title {
     font-family: 'Press Start 2P', cursive;
     font-size: 1rem;
     margin: 3%;
-    color: rgb(222, 249, 18);
+    color: #fc00c5;
   }
 
- 
+  #game-title {
+    font-family: 'Brush system-ui', cursive;
+    font-size: 2rem;
+    color: blue;
+  }
+
   
   .container {
     display: block;
@@ -29,7 +34,17 @@ body {
     font-size: 1.5rem; /* Adjust font size for smaller screens */
   }
   
-  .btn1,
+  .btn1 {
+    margin: 2%;
+    display: inline-block;
+    height: 100px; /* Adjust sizes for smaller screens */
+    width: 200px; /* Adjust sizes for smaller screens */
+    border: 5px solid black; /* Adjust border thickness for smaller screens */
+    border-radius: 20%;
+    font-size: 1.5rem; /* Adjust font size   for smaller screens */
+    background-color: rgb(38, 123, 1);
+  }
+
   .btn2 {
     margin: 2%;
     display: inline-block;
@@ -39,6 +54,7 @@ body {
     border-radius: 20%;
     font-size: 1.5rem; /* Adjust font size   for smaller screens */
     background-color: orange;
+    visibility: hidden;
   }
   
   .game-over {
@@ -77,13 +93,13 @@ body {
     
     #level-title {
       font-family: 'Press Start 2P', cursive;
-      font-size: 1.5rem;
+      font-size: 1rem;
       margin: 2%;
       color: #fc00c5;
     }
 
     #game-title {
-      font-size: 3rem;
+      font-size: 2rem;
       color: blue;
     }
 
@@ -104,19 +120,19 @@ body {
     
     .btn2 {
       height: 100px; /* Adjust sizes for smaller screens */
-      width: 180px; /* Adjust sizes for smaller screens */
+      width: 220px; /* Adjust sizes for smaller screens */
       border: 10px solid black; /* Adjust border thickness for smaller screens */
       font-size: 3rem; /* Adjust font size for smaller screens */
       border-radius: 0%;
+      visibility: hidden;
     }
 
     .btn1 {
       height: 100px; /* Adjust sizes for smaller screens */
-      width: 180px; /* Adjust sizes for smaller screens */
+      width: 220px; /* Adjust sizes for smaller screens */
       border: 10px solid black; /* Adjust border thickness for smaller screens */
       font-size: 3rem; /* Adjust font size for smaller screens */
       border-radius: 0%;
-      background-color: darkgreen;
     }
   }
   

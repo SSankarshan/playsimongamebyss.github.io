@@ -72,13 +72,13 @@ body {
 
     #level-title {
       font-family: 'Press Start 2P', cursive;
-      font-size: 1rem;
+      font-size: 3rem;
       margin: 2%;
       color: #fc00c5;
     }
 
     #game-title {
-      font-size: 2rem;
+      font-size: 5rem;
     }
 
     .container {
@@ -89,8 +89,8 @@ body {
 
     
     .btn {
-      height: 100px; /* Adjust sizes for smaller screens */
-      width: 100px; /* Adjust sizes for smaller screens */
+      height: 150px; /* Adjust sizes for smaller screens */
+      width: 150px; /* Adjust sizes for smaller screens */
       border: 5px solid black; /* Adjust border thickness for smaller screens */
       font-size: 1.5rem; /* Adjust font size for smaller screens */
     }

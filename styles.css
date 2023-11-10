@@ -1,51 +1,64 @@
 body {
   text-align: center;
-  background-color: rgb(128, 182, 120);
+  background-color: rgb(0, 0, 0);
 }
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
-  margin:  5%;
-  color: #FEF2BF;
+  font-size: 2.5rem;
+  margin: 3%;
+  color: #fc00c5;
+}
+
+#game-title {
+  font-family: 'Brush system-ui', cursive;
+  font-size: 5rem;
+  color: blue;
 }
 
 .container {
-  display: block;
-  width: 50%;
+  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   margin: auto;
+  max-width: 800px;
+}
 
+.btn,
+.btn1,
+.btn2 {
+  margin: 2%;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid black;
+  border-radius: 30%;
+  font-size: 4rem;
+  text-align: center;
 }
 
 .btn {
-  margin: 25px;
-  display: inline-block;
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
-  border-radius: 20%;
+  height: 340px;
+  width: 340px;
 }
 
-.btn1 {
-  margin: 25px;
-  display: inline-block;
+.btn1,
+.btn2 {
   height: 150px;
-  width: 300px;
-  border: 10px solid black;
-  border-radius: 20%;
-  background-color: chartreuse;
-  font-size: 3rem;
+  width: 400px;
+  border-radius: 5%;
 }
 
 .btn2 {
-  margin: 25px;
-  display: inline-block;
-  height: 150px;
-  width: 300px;
-  border: 10px solid black;
-  border-radius: 20%;
-  background-color: rgb(255, 128, 0);
-  font-size: 3rem;
+  background-color: orange;
+  visibility: hidden;
+}
+
+.btn1 {
+  background-color: orange;
 }
 
 .game-over {
@@ -58,11 +71,11 @@ body {
 }
 
 .green {
-  background-color: green;
+  background-color: rgb(9, 255, 9);
 }
 
 .blue {
-  background-color: blue;
+  background-color: rgb(24, 163, 255);
 }
 
 .yellow {
@@ -72,4 +85,58 @@ body {
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
+}
+
+/* Media queries for laptops */
+
+@media only screen and (min-width: 1200px) {
+
+  body {
+    text-align: center;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  #level-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    margin: 2%;
+    color: rgb(252, 0, 214);
+  }
+
+  #game-title {
+    font-size: 2rem;
+    color: blue;
+  }
+
+  .container {
+    display: flex;
+    width: 50%; /* Change this to 100% to make it responsive */
+    margin: auto;
+  }
+
+  
+  .btn {
+    height: 180px; /* Adjust sizes for smaller screens */
+    width: 180px; /* Adjust sizes for smaller screens */
+    border: 10px solid black; /* Adjust border thickness for smaller screens */
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  
+  .btn2 {
+    height: 100px; /* Adjust sizes for smaller screens */
+    width: 220px; /* Adjust sizes for smaller screens */
+    border: 10px solid black; /* Adjust border thickness for smaller screens */
+    font-size: 3rem; /* Adjust font size for smaller screens */
+    border-radius: 10%;
+    visibility: hidden;
+  }
+
+  .btn1 {
+    height: 100px; /* Adjust sizes for smaller screens */
+    width: 220px; /* Adjust sizes for smaller screens */
+    border: 10px solid black; /* Adjust border thickness for smaller screens */
+    font-size: 3rem; /* Adjust font size for smaller screens */
+    border-radius: 10%;
+  }
 }

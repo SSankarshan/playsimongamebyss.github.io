@@ -19,7 +19,7 @@ body {
   
   .container {
     display: block;
-    width: 70%; /* Change this to 100% to make it responsive */
+    width: 100%; /* Change this to 100% to make it responsive */
     margin: auto;
     max-width: 600px; /* Set a maximum width to avoid content becoming too wide on larger screens */
   }
@@ -93,14 +93,14 @@ body {
     
     #level-title {
       font-family: 'Press Start 2P', cursive;
-      font-size: 1rem;
+      font-size: 4rem;
       margin: 2%;
-      color: #fc00c5;
+      color: rgb(252, 0, 214);
     }
 
     #game-title {
-      font-size: 2rem;
-      color: blue;
+      font-size: 6rem;
+      color: rgb(245, 248, 41);
     }
 
     .container {

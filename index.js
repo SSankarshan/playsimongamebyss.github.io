@@ -7,7 +7,7 @@ var count = 0;
 var maxLevelReached = 0;
 
 $(".btn").on("click", function (event) {
-    incrementCount();
+    incrementCount(1);
     var iD = event.target.id;
     playSound(iD);
     blinkEffect(iD);
@@ -40,8 +40,8 @@ $("#btn3").on("click", function (event) {
     alert("Repeat the sequence of colors that have blinked so far ! ");
 });
 
-function incrementCount() {
-    count += 1;
+function incrementCount(x) {
+    count += x;
 }
 function resetCount() {
     count = 0;
@@ -74,13 +74,13 @@ function handler(btnId, count) {
             setTimeout(nextSequence, 1000);
         } else {
             playSoundGameOver();
-            incrementCount();
+            incrementCount(1000000);
             maxLevelReached = Math.max(maxLevelReached, level);
             $("#level-title").html("Game Over! <br>your score = " + (level - 1)  + " <br>Max score = " + (maxLevelReached - 1) + "<br> Click 'Replay' to see last level. Click 'Start' to play again!");
             $(".btn2").css("visibility","visible");
         }
     } else if(count > level) {
-        alert("Please 'start' the game again !");
+        alert("Please 'start' the game again ! Click Replay to see again !");
     }
 }
 

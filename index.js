@@ -51,7 +51,7 @@ function displayPlayAgain() {
 }
 
 function replay() {
-    playReplaySound();
+    playSoundReplay();
     $("#level-title").text("Replay of last level. Click 'start' to play again. Press 'Replay' to see again");
     for (var i = 0; i < gamePattern.length; i++) {
         setTimeout(function (color) {
@@ -74,10 +74,13 @@ function handler(btnId, count) {
             setTimeout(nextSequence, 1000);
         } else {
             playSoundGameOver();
+            incrementCount();
             maxLevelReached = Math.max(maxLevelReached, level);
             $("#level-title").html("Game Over! <br>your score = " + (level - 1)  + " <br>Max score = " + (maxLevelReached - 1) + "<br> Click 'Replay' to see last level. Click 'Start' to play again!");
             $(".btn2").css("visibility","visible");
         }
+    } else if(count > level) {
+        alert("Please 'start' the game again !");
     }
 }
 
@@ -97,9 +100,9 @@ function playSound(color) {
 function playSoundGameOver() {
     const audio = new Audio("sounds\\negative_beeps-6008.mp3");
     audio.play();
-}
+}   
 
-function playReplaySound() {
+function playSoundReplay() {
     const audio = new Audio("sounds\\rewind.mp3");
     audio.play();
 }

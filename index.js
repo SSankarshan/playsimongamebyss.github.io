@@ -1,17 +1,25 @@
 alert("In Simon, you watch and listen to the colors and sounds, then try to remember and do them yourself—it's like a colorful memory challenge !");
+
 var gamePattern = [];
 var userClickedPattern = [];
 var buttonColours = ["blue", "red", "yellow", "green"];
 var level = 0;
 var count = 0;
 var maxLevelReached = 0;
+var start = false;
 
 $(".btn").on("click", function (event) {
-    incrementCount(1);
-    var iD = event.target.id;
-    playSound(iD);
-    blinkEffect(iD);
-    handler(iD, count);
+    if(start == true) {
+        incrementCount(1);
+        var iD = event.target.id;
+        playSound(iD);
+        blinkEffect(iD);
+        handler(iD, count);
+    } else {
+        if(level == 0) {
+            alert("Please click 'start' to play");
+        } 
+    }
 });
 
 $("#btn1").on("click", function (event) {
@@ -37,7 +45,7 @@ $(document).on("keydown", function (event) {
 });
 
 $("#btn3").on("click", function (event) {
-    alert("Repeat the sequence of colors that have blinked so far ! ");
+    alert("Click the colors in the sequence that they have blinked so far, till the current level !");
 });
 
 function incrementCount(x) {
@@ -52,45 +60,42 @@ function displayPlayAgain() {
 
 function replay() {
     playSoundReplay();
-    $("#level-title").text("Replay of last level. Click 'start' to play again. Press 'Replay' to see again");
+    $("#level-title").html("Viewing replay of last level. <br>" +"Click 'Start' to play again.<br> " + "Press 'Replay' to see again");
     for (var i = 0; i < gamePattern.length; i++) {
         setTimeout(function (color) {
             return function () {
                 blinkEffect(color);
             };
-        }(gamePattern[i]), 1500 * (i + 1));
+        }(gamePattern[i]), 1000 * (i + 1));
     }
 }
 
 function handler(btnId, count) {
     var userClickedColor = btnId;
     userClickedPattern.push(userClickedColor);
-    console.log("> userClickedPattern is " + userClickedPattern + " > count is " + count);
     if (count == level) {
         resetCount();
         if (gamePattern.every((element, index) => element === userClickedPattern[index])) {
             userClickedPattern = [];
-            console.log("count is " + count);
             setTimeout(nextSequence, 1000);
         } else {
             playSoundGameOver();
-            incrementCount(1000000);
             maxLevelReached = Math.max(maxLevelReached, level);
-            $("#level-title").html("Game Over! <br>your score = " + (level - 1)  + " <br>Max score = " + (maxLevelReached - 1) + "<br> Click 'Replay' to see last level. Click 'Start' to play again!");
+            $("#level-title").html("Game Over! <br>your score = " + (level - 1)  + " <br>Max score = " + (maxLevelReached - 1) + "<br> Click 'Replay' to see last level.<br> Click 'Start' to play again!");
             $(".btn2").css("visibility","visible");
+            incrementCount(1000000);
+            start = false;
         }
-    } else if(count > level) {
-        alert("Please 'start' the game again ! Click Replay to see again !");
     }
 }
 
 
 function blinkEffect(color) {
-    $("#" + color).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    $("#" + color).fadeIn(50).fadeOut(50).fadeIn(50).fadeOut(50).fadeIn(50);
 }
 
 function fadeEffect(btn) {
-    $("#" + btn).fadeIn(100).fadeOut(100).fadeIn(100);
+    $("#" + btn).fadeIn(50).fadeOut(50).fadeIn(50);
 }
 
 function playSound(color) {
@@ -115,7 +120,6 @@ function nextSequence() {
     playSound(randomChoosenColour);
     blinkEffect(randomChoosenColour);
     gamePattern.push(randomChoosenColour);
-    console.log("> game pattern is " + gamePattern + " > level is " + level + " > count is " + count);
 }
 
 function playGame() {
@@ -123,6 +127,7 @@ function playGame() {
     userClickedPattern = [];
     level = 0;
     count = 0;
+    start = true;
     $(".btn2").css("visibility","hidden");
     nextSequence();
 }

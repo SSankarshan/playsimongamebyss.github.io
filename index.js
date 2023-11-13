@@ -18,8 +18,6 @@ $(".btn").on("click", function (event) {
     } else {
         if(level == 0) {
             alert("Please click 'START' to play !");
-        } else {
-            alert("Please click 'START' to play again! Click 'REPLAY' to see again.")
         }
     }
 });

@@ -17,8 +17,10 @@ $(".btn").on("click", function (event) {
         handler(iD, count);
     } else {
         if(level == 0) {
-            alert("Please click 'start' to play");
-        } 
+            alert("Please click 'START' to play !");
+        } else {
+            alert("Please click 'START' to play again! Click 'REPLAY' to see again.")
+        }
     }
 });
 
@@ -54,13 +56,22 @@ function incrementCount(x) {
 function resetCount() {
     count = 0;
 }
-function displayPlayAgain() {
-    $("#level-title").text(" Click 'start' to play again..");
+
+function startToggler() {
+    if( start == false ) {
+        start = true;
+    } else {
+        start = false;
+    }
+}
+function displayReplayAgain() {
+    $(".btn2").css("visibility", "visible");
 }
 
 function replay() {
+    $(".btn2").css("visibility", "hidden");
     playSoundReplay();
-    $("#level-title").html("Viewing replay of last level. <br>" +"Click 'Start' to play again.<br> " + "Press 'Replay' to see again");
+    $("#level-title").html("Viewing replay of last level. <br>" + "Click 'Start' to play again.<br> " + "Press 'Replay' to see again");
     for (var i = 0; i < gamePattern.length; i++) {
         setTimeout(function (color) {
             return function () {
@@ -68,6 +79,7 @@ function replay() {
             };
         }(gamePattern[i]), 1000 * (i + 1));
     }
+    setTimeout(displayReplayAgain, (gamePattern.length) * 1000);
 }
 
 function handler(btnId, count) {
@@ -84,7 +96,7 @@ function handler(btnId, count) {
             $("#level-title").html("Game Over! <br>your score = " + (level - 1)  + " <br>Max score = " + (maxLevelReached - 1) + "<br> Click 'Replay' to see last level.<br> Click 'Start' to play again!");
             $(".btn2").css("visibility","visible");
             incrementCount(1000000);
-            start = false;
+            startToggler();
         }
     }
 }
@@ -127,7 +139,7 @@ function playGame() {
     userClickedPattern = [];
     level = 0;
     count = 0;
-    start = true;
+    startToggler();
     $(".btn2").css("visibility","hidden");
     nextSequence();
 }
